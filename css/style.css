@@ -1,0 +1,182 @@
+body, html{
+    font-size: 20px;
+    font-family: "Helvetica", sans-serif;
+    box-sizing: border-box;
+}
+body,html{
+    margin:0;
+    padding: 0;
+    background: grey;
+}
+img {
+    height: 75px;
+    width: 75px;
+    padding: 5px;
+}
+nav ul{
+    list-style: none;
+    padding:0;
+    background:white;
+    
+}
+
+nav ul li a{
+    color:black;
+    text-decoration: none;
+    padding: .8rem 1rem;
+    display: block;
+    line-height: 1;
+
+}
+/*styling logo*/
+
+nav div:first-child{
+    background:white;
+}
+nav div:first-child h1{
+    line-height: 0;
+    padding: .8rem 0rem;
+    text-align: center;
+}
+
+nav div:first-child h1, nav ul{
+    margin:0;
+}
+
+/*Styling for larger devices*/
+
+@media only screen and (min-width: 30em){
+    nav{
+        display: flex;
+        justify-content: space-between;
+        background: white;
+        align-items: center;
+        border-bottom: 2px solid black;
+    }
+    
+    nav ul{
+        display: flex;
+        align-items: center;
+        background:none;
+        flex-wrap: wrap;
+    }
+    nav div:first-child h1{
+        padding: 0;
+        margin:0 1rem;
+    }
+    nav div:first-child img{
+        height: 75px;
+        padding-left: 60px;
+        
+    }
+    nav ul li{
+        border-bottom:none;
+        flex: 1 0 auto;
+        position: relative;
+    }
+    nav ul li a{
+        padding:1.2rem 1rem;
+    }
+    nav ul li a::before, nav ul li a::after{
+        content: "";
+        position: absolute;
+        bottom:10px;
+        right: 0;
+        width:0%;
+        height: 2px;
+        background:black;
+        transition: .4s width ease-in-out;
+        
+    }
+    
+    nav ul li a::before{
+        left:0;
+    }
+    
+    nav ul li a:hover::after,nav ul li a:hover::before{
+        width: 50%;
+    } 
+   
+}
+
+/* 3 kolumner */
+.column {
+    display: inline-block;
+    width: 25%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+    margin-top: 20px;
+    margin: 30px;
+  }
+  
+  /* visa dom under varandra när sidan är mindre än 750px */
+  @media screen and (max-width: 750px) {
+    .column {
+        width: 50%;
+        display: block;
+    }
+  }
+  /* Clear floats */
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  /* skuggor */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    overflow-wrap: break-word;
+  }
+  
+  /* padding inuti */
+  .container {
+    padding: 0 16px;
+  }
+  
+  .title {
+    color: grey;
+  }
+  
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .button:hover {
+    background-color: #555;
+  }
+  
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: left;
+    font-size: 10px;
+    padding-left: 20px;
+  }
+.rotate {
+    transform: rotate(180deg);
+    height: 290px;
+  }
+
+/*SLIDESHOW*/
+.fling-minislide {width:100%; height:550px; overflow:hidden; position:relative; padding: 0; }
+.fling-minislide img{ position:absolute; animation:fling-minislide 20s infinite; opacity:0; width: 100%; height: auto; padding: 0;}
+
+@keyframes fling-minislide {25%{opacity:1;} 40%{opacity:0;}} 
+.fling-minislide img:nth-child(4){animation-delay:0s;}
+.fling-minislide img:nth-child(3){animation-delay:5s;}
+.fling-minislide img:nth-child(2){animation-delay:10s;}
+.fling-minislide img:nth-child(1){animation-delay:15s;}
